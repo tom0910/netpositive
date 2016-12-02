@@ -20,26 +20,5 @@
 
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 
-
     <a href="{{ path('hwi_oauth_connect') }}facebook">Login with Facebook</a>
 </form>
-
-
-
-{% block stylesheets %}
-    <style>
-        body {
-            padding-top: 40px;
-            padding-bottom: 40px;
-            background-color: #eee;
-        }
-        .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {
-            /*padding: 0px 16px;*/
-        }
-        .btn-primary {
-            /*background: #0099cc;*/
-            width: 30%;
-            color: #ffffff;
-        }
-    </style>
-{% endblock %}

@@ -29,16 +29,11 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         if (null !== $existingUser) {
             // set current user id and token to null for disconnect
             // ...
-//            $existingUser->$setter_id(null);
-//            $existingUser->$setter_token(null);
+
             $this->userManager->updateUser($existingUser);
         }
         // we connect current user, set current user id and token
         // ...;
-//        $user->$setter_id(null);
-//        $user->$setter_token(null);
-//        $user->$setter_id($username);
-//        $user->$setter_token($response->getAccessToken());
 
         $this->userManager->updateUser($user);
     }
@@ -51,16 +46,20 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         $userEmail = $response->getEmail();
         $user = $this->userManager->findUserByEmail($userEmail);
 
+
         // if null just create new user and set it properties
         if (null === $user) {
             $username = $response->getRealName();
             $email = $response->getEmail();
             $user = new User();
-            $user->setUsername($username);
+            //$user->setUsername($username);
+            $user->setUsername($email);
             $user->setEmail($email);
             $user->setPassword($email);
+            $user->setFullName($username);
             $user->setEnabled(true);
-
+            $user->setFacebookId($username);
+            $user->setFacebookAccessToken($response->getAccessToken());
             // ... save user to database
 
             return $user;

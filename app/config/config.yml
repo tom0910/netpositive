@@ -6,10 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: hu
 
 framework:
-    translator: ~ #FUB
+    translator:      { fallback: "%locale%" }
+    default_locale:  "%locale%"
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
@@ -75,6 +76,14 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationFormType
+            validation_groups: [MyRegistration]
+    profile:
+        form:
+            type: AppBundle\Form\RegistrationFormType
+            validation_groups: [MyProfile]
 
 hwi_oauth:
     # list of names of the firewalls in which this bundle is active, this setting MUST be set
