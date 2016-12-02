@@ -6,6 +6,7 @@ use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider as BaseFOSUBProvider;
 use Symfony\Component\Security\Core\User\UserInterface;
 use AppBundle\Entity\User;
+use Symfony\Component\HttpFoundation\Request;
 
 class MyFOSUBUserProvider extends BaseFOSUBProvider
 {
@@ -47,12 +48,13 @@ class MyFOSUBUserProvider extends BaseFOSUBProvider
         $user = $this->userManager->findUserByEmail($userEmail);
 
 
-        // if null just create new user and set it properties
+        // if null just create new user and set its properties
         if (null === $user) {
             $username = $response->getRealName();
             $email = $response->getEmail();
             $user = new User();
             //$user->setUsername($username);
+
             $user->setUsername($email);
             $user->setEmail($email);
             $user->setPassword($email);

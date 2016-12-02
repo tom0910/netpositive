@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use FOS\UserBundle\Util\LegacyFormHelper;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use libphonenumber\PhoneNumberFormat;
+use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 class RegistrationFormType extends AbstractType
 {
     public function getParent()
@@ -30,8 +32,9 @@ class RegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('full_name')
-            ->add('phone')
+            ->add('full_name',null, array('label' => 'név'))
+//            ->add('phoneNumber')
+            ->add('phone', PhoneNumberType::class, array('label' => 'telefonszám','default_region' => 'HU', 'format' => PhoneNumberFormat::NATIONAL))
         ;
     }
 
