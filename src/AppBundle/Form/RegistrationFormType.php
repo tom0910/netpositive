@@ -34,7 +34,7 @@ class RegistrationFormType extends AbstractType
             ))
             ->add('full_name',null, array('label' => 'név'))
 //            ->add('phoneNumber')
-            ->add('phone', PhoneNumberType::class, array('label' => 'telefonszám','default_region' => 'HU', 'format' => PhoneNumberFormat::NATIONAL))
+            ->add('phone', PhoneNumberType::class, array('label' => 'telefonszám','default_region' => 'HU', 'format' => PhoneNumberFormat::NATIONAL, 'required' => false,))
         ;
     }
 
