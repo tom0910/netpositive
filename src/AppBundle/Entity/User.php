@@ -155,7 +155,9 @@ class User extends FOSUBUser
 
     public function getLastloginclientIp()
     {
-        return $this->last_login_client_ip;
+        $ip=$this->last_login_client_ip;
+        return $ip->getShortAddress();
+
     }
 
     public function setLastloginclientIp(IP $ip)
@@ -221,6 +223,17 @@ class User extends FOSUBUser
     public function getUpdatedatetime()
     {
         return $this->update_datetime;
+    }
+
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function lastLoginDatetime()
+    {
+        return $this->lastLogin;
     }
 
 }

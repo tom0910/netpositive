@@ -27,10 +27,10 @@
                                 <p>Felhasználó neve: {{ user.getFullName() }}</p>
                                 <p>email: {{ user.email }}</p>
                                 <p>telefon: {{ user.getPhone() }}</p>
-                                {#<p>létrehozás ideje: {{ user.getCreateDatetime() }}</p>#}
-                                {#<p>utolsó módosítás ideje: {{ user.getUpdatedatetime() }}</p>#}
-                                <p>utolsó sikeres bejelentkezés időpontja: {{ user.getLastloginclientIp() }}</p>
-                                <p>utolsó sikeres bejelentkezés ip címe: {{ user.getLastloginclientIp() }}</p>
+                                <p>létrehozás ideje: {{ user.getCreateDatetime()|date("Y/m/d", "Europe/Budapest") }}</p>
+                                <p>utolsó módosítás ideje: {{ user.getUpdatedatetime()|date("Y/m/d", "Europe/Budapest") }}</p>
+                                <p>utolsó sikeres bejelentkezés időpontja: {{ user.lastLoginDatetime()|date("Y/m/d", "Europe/Budapest") }}</p>
+                                <p>utolsó sikeres bejelentkezés ip címe: {{ user.getLastloginclientIp()}}</p>
                                 {#<p>{{ 'profile.show.email'|trans }}: {{ user. }}</p>#}
                         </div>
                     </div>
