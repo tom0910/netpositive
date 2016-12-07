@@ -31,7 +31,13 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "misd/phone-number-bundle": "^1.1",
         "darsyn/ip": "^3.1",
-        "stof/doctrine-extensions-bundle": "^1.2"
+        "stof/doctrine-extensions-bundle": "^1.2",
+        "mopa/bootstrap-bundle": "~3.0",
+        "twbs/bootstrap": "~3.3.0",
+        "knplabs/knp-paginator-bundle": "dev-master",
+        "hwi/oauth-bundle": "^0.5.1",
+        "knplabs/knp-menu-bundle": "^2.0"
+
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

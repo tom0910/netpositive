@@ -163,3 +163,7 @@ twig:
     form:
         resources: ['bootstrap_3_layout.html.twig']
         # resources: ['bootstrap_3_horizontal_layout.html.twig']
+
+mopa_bootstrap:
+    form: ~
+    menu: ~

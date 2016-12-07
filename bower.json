@@ -1,0 +1,21 @@
+{
+  "name": "security3",
+  "homepage": "https://github.com/tom0910/netpositive",
+  "authors": [
+    "Zeffer Tamás <tamas.zeffer@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/assets/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

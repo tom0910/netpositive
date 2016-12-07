@@ -1,0 +1,41 @@
+{% extends 'default.html.twig' %}
+
+
+{% block body %}
+
+
+    <style>
+        #profile-edit .form-control{
+            margin: 2px;
+        }
+        .login-panel {
+            margin-top: 3%;
+        }
+        legend {
+            display:none;
+        }
+    </style>
+    {% for user in users %}
+        <div class="container ez">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Felhasználói Adatok:</h3>
+                        </div>
+                        <div class="panel-body id="profile-edit"">
+                                <p>Felhasználó neve: {{ user.getFullName() }}</p>
+                                <p>email: {{ user.email }}</p>
+                                <p>telefon: {{ user.getPhone() }}</p>
+                                {#<p>létrehozás ideje: {{ user.getCreateDatetime() }}</p>#}
+                                {#<p>utolsó módosítás ideje: {{ user.getUpdatedatetime() }}</p>#}
+                                <p>utolsó sikeres bejelentkezés időpontja: {{ user.getLastloginclientIp() }}</p>
+                                <p>utolsó sikeres bejelentkezés ip címe: {{ user.getLastloginclientIp() }}</p>
+                                {#<p>{{ 'profile.show.email'|trans }}: {{ user. }}</p>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

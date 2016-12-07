@@ -1,8 +1,36 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+<style>
+
+    #profile-edit .form-control{
+        margin: 10px;
+    }
+    .login-panel {
+        margin-top: 10%;
+    }
+    legend {
+        display:none;
+    }
+</style>
+
+<div class="netp-container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Saját adatlapja </h3>
+                </div>
+                <div class="panel-body" id="profile-edit">
+
+                        {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+                            {{ form_widget(form) }}
+                            <div class="col-md-4 col-md-offset-4">
+                                <input class="btn btn-lg btn-primary btn-block" type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+                            </div>
+                        {{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
     </div>
-{{ form_end(form) }}
+</div>
